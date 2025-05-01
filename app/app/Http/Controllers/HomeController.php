@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
+      /**
      * Create a new controller instance.
      *
      * @return void
@@ -19,10 +19,11 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function index()
     {
-        return view('home');
+				// ログイン成功後にtodoのトップページへリダイレクトする
+        return redirect()->route('todo.index');
     }
 }
